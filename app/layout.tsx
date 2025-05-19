@@ -1,21 +1,24 @@
 import type React from "react"
-import "./globals.css"
 import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+import "./globals.css"
+
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Elev8 - Personal Development Tracker",
-  description: "Track your goals, habits, and personal growth",
+  title: "Elev8 - Personal Growth Platform",
+  description: "Track your goals, build habits, and elevate your life",
     generator: 'v0.dev'
 }
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode
-}) {
+}>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }
