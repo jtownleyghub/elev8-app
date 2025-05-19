@@ -2,51 +2,35 @@
 
 import { useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight, X } from "lucide-react"
-
-interface Event {
-  id: string
-  date: Date
-  title: string
-  time: string
-}
+import { useGoals } from "@/contexts/goal-context"
+import type { Task } from "@/types/goals"
+import Link from "next/link"
 
 export function CalendarWidget() {
+  const { tasks, getTasksByDate, deleteTask } = useGoals()
   const [currentDate, setCurrentDate] = useState(new Date())
-  const [events, setEvents] = useState<Event[]>([])
-  const [showAddEvent, setShowAddEvent] = useState(false)
-  const [newEvent, setNewEvent] = useState({
-    title: "",
-    time: "",
-    day: new Date().getDate(),
-  })
+  const [selectedDay, setSelectedDay] = useState(new Date().getDate())
+  const [selectedDayTasks, setSelectedDayTasks] = useState<Task[]>([])
 
-  // Initialize with some events
+  // Get tasks for the selected day
   useEffect(() => {
-    const today = new Date()
-    const tomorrow = new Date()
-    tomorrow.setDate(today.getDate() + 1)
-
-    const nextWeek = new Date()
-    nextWeek.setDate(today.getDate() + 7)
-
-    const initialEvents = [
-      { id: "1", date: today, title: "Team Meeting", time: "10:00 AM" },
-      { id: "2", date: tomorrow, title: "Doctor's Appointment", time: "2:30 PM" },
-      { id: "3", date: nextWeek, title: "Project Deadline", time: "5:00 PM" },
-    ]
-
-    setEvents(initialEvents)
-  }, [])
+    const selectedDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), selectedDay)
+    const dateString = selectedDate.toISOString().split("T")[0]
+    const dayTasks = getTasksByDate(dateString)
+    setSelectedDayTasks(dayTasks)
+  }, [currentDate, selectedDay, getTasksByDate, tasks])
 
   const daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate()
   const firstDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1).getDay()
 
   const prevMonth = () => {
     setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1))
+    setSelectedDay(1)
   }
 
   const nextMonth = () => {
     setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1))
+    setSelectedDay(1)
   }
 
   const monthName = currentDate.toLocaleString("default", { month: "long" })
@@ -66,27 +50,26 @@ export function CalendarWidget() {
       date.getMonth() === new Date().getMonth() &&
       date.getFullYear() === new Date().getFullYear()
 
-    const hasEvent = events.some(
-      (event) =>
-        event.date.getDate() === date.getDate() &&
-        event.date.getMonth() === date.getMonth() &&
-        event.date.getFullYear() === date.getFullYear(),
-    )
+    const isSelected = d === selectedDay
+
+    // Check if this day has tasks
+    const dateString = date.toISOString().split("T")[0]
+    const dayTasks = getTasksByDate(dateString)
+    const hasTask = dayTasks.length > 0
 
     days.push(
       <div
         key={d}
         className={`h-8 w-8 flex items-center justify-center rounded-full text-sm cursor-pointer ${
-          isToday
+          isSelected
             ? "bg-indigo-600 text-white"
-            : hasEvent
-              ? "border border-indigo-500 text-indigo-400"
-              : "text-gray-300 hover:bg-gray-700"
+            : isToday
+              ? "border-2 border-indigo-500 text-indigo-400"
+              : hasTask
+                ? "border border-indigo-500/50 text-indigo-400"
+                : "text-gray-300 hover:bg-gray-700"
         }`}
-        onClick={() => {
-          setNewEvent({ ...newEvent, day: d })
-          setShowAddEvent(true)
-        }}
+        onClick={() => setSelectedDay(d)}
       >
         {d}
       </div>,
@@ -112,33 +95,9 @@ export function CalendarWidget() {
 
   const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
-  // Get today's events
-  const today = new Date()
-  const todayEvents = events.filter(
-    (event) =>
-      event.date.getDate() === today.getDate() &&
-      event.date.getMonth() === today.getMonth() &&
-      event.date.getFullYear() === today.getFullYear(),
-  )
-
-  const handleAddEvent = () => {
-    if (newEvent.title && newEvent.time) {
-      const eventDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), newEvent.day)
-      const newEventObj = {
-        id: Date.now().toString(),
-        date: eventDate,
-        title: newEvent.title,
-        time: newEvent.time,
-      }
-
-      setEvents([...events, newEventObj])
-      setNewEvent({ title: "", time: "", day: new Date().getDate() })
-      setShowAddEvent(false)
-    }
-  }
-
-  const removeEvent = (id: string) => {
-    setEvents(events.filter((event) => event.id !== id))
+  const formatSelectedDate = () => {
+    const date = new Date(currentDate.getFullYear(), currentDate.getMonth(), selectedDay)
+    return date.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" })
   }
 
   return (
@@ -179,63 +138,42 @@ export function CalendarWidget() {
         </div>
       </div>
 
-      {showAddEvent && (
-        <div className="bg-gray-700/50 p-3 rounded-lg space-y-2 mt-4">
-          <h4 className="text-sm font-medium">
-            Add Event for {monthName} {newEvent.day}
-          </h4>
-          <div className="space-y-2">
-            <input
-              type="text"
-              placeholder="Event title"
-              value={newEvent.title}
-              onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
-              className="w-full px-3 py-1 bg-gray-700 border border-gray-600 rounded-lg text-white text-sm focus:outline-none focus:ring-1 focus:ring-indigo-500"
-            />
-            <input
-              type="text"
-              placeholder="Time (e.g. 3:00 PM)"
-              value={newEvent.time}
-              onChange={(e) => setNewEvent({ ...newEvent, time: e.target.value })}
-              className="w-full px-3 py-1 bg-gray-700 border border-gray-600 rounded-lg text-white text-sm focus:outline-none focus:ring-1 focus:ring-indigo-500"
-            />
-          </div>
-          <div className="flex justify-end space-x-2">
-            <button
-              onClick={() => setShowAddEvent(false)}
-              className="px-3 py-1 bg-gray-600 hover:bg-gray-700 rounded-lg text-sm"
-            >
-              Cancel
-            </button>
-            <button onClick={handleAddEvent} className="px-3 py-1 bg-indigo-600 hover:bg-indigo-700 rounded-lg text-sm">
-              Add Event
-            </button>
-          </div>
-        </div>
-      )}
-
       <div className="mt-4">
-        <h4 className="text-sm font-medium mb-2">Today's Events</h4>
-        {todayEvents.length > 0 ? (
-          <div className="space-y-2">
-            {todayEvents.map((event) => (
-              <div key={event.id} className="bg-gray-700/50 p-2 rounded-lg text-sm group">
+        <h4 className="text-sm font-medium mb-2">{formatSelectedDate()}</h4>
+        {selectedDayTasks.length > 0 ? (
+          <div className="space-y-2 max-h-[200px] overflow-y-auto">
+            {selectedDayTasks.map((task) => (
+              <div key={task.id} className="bg-gray-700/50 p-2 rounded-lg text-sm group">
                 <div className="flex justify-between">
-                  <div className="font-medium">{event.title}</div>
+                  <div className="font-medium">{task.title}</div>
                   <button
-                    onClick={() => removeEvent(event.id)}
+                    onClick={() => deleteTask(task.id)}
                     className="text-gray-400 hover:text-red-400 opacity-0 group-hover:opacity-100 transition-opacity"
                   >
                     <X className="h-3 w-3" />
                   </button>
                 </div>
-                <div className="text-xs text-gray-400">{event.time}</div>
+                <div className="text-xs text-gray-400 flex items-center">
+                  <span>{task.category}</span>
+                  {task.scheduledTime && (
+                    <>
+                      <span className="mx-1">•</span>
+                      {new Date(task.scheduledTime).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+                    </>
+                  )}
+                </div>
               </div>
             ))}
           </div>
         ) : (
-          <p className="text-sm text-gray-400">No events scheduled for today</p>
+          <p className="text-sm text-gray-400">No tasks scheduled for this day</p>
         )}
+
+        <div className="mt-3">
+          <Link href="/tasks/new" className="text-sm text-indigo-400 hover:text-indigo-300">
+            + Add task for this day
+          </Link>
+        </div>
       </div>
     </div>
   )

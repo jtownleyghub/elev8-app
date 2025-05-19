@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { LayoutDashboard, Target, CheckSquare, PieChart, User } from "lucide-react"
+import { LayoutDashboard, Target, CheckSquare, PieChart, Users } from "lucide-react"
 
 interface BottomNavProps {
   currentPath: string
@@ -11,7 +11,7 @@ export function BottomNav({ currentPath }: BottomNavProps) {
     { href: "/goals", label: "Goals", icon: Target },
     { href: "/tasks", label: "Tasks", icon: CheckSquare },
     { href: "/life-areas", label: "Life Areas", icon: PieChart },
-    { href: "/profile", label: "Profile", icon: User },
+    { href: "/life-areas/relationships/contacts", label: "Contacts", icon: Users },
   ]
 
   return (

@@ -9,6 +9,7 @@ import {
   BarChart2,
   HelpCircle,
   LogOut,
+  Users,
 } from "lucide-react"
 
 interface SidebarNavProps {
@@ -21,6 +22,7 @@ export function SidebarNav({ currentPath }: SidebarNavProps) {
     { href: "/goals", label: "Goals", icon: Target },
     { href: "/tasks", label: "Tasks", icon: CheckSquare },
     { href: "/life-areas", label: "Life Areas", icon: PieChart },
+    { href: "/life-areas/relationships/contacts", label: "Contacts", icon: Users },
     { href: "/calendar", label: "Calendar", icon: Calendar },
     { href: "/analytics", label: "Analytics", icon: BarChart2 },
   ]

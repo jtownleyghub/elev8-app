@@ -1,10 +1,38 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Trophy, Star, Award, ChevronUp, ChevronDown } from "lucide-react"
+import { useGoals } from "@/contexts/goal-context"
 
 export function LifeProgressTracker() {
   const [expanded, setExpanded] = useState(true)
+  const { goals } = useGoals()
+  const [completedGoals, setCompletedGoals] = useState(0)
+  const [totalGoals, setTotalGoals] = useState(0)
+  const [level, setLevel] = useState(1)
+  const [nextLevelGoals, setNextLevelGoals] = useState(0)
+
+  useEffect(() => {
+    // Count completed and total goals
+    const completed = goals.filter((goal) => goal.isCompleted).length
+    setCompletedGoals(completed)
+    setTotalGoals(goals.length)
+
+    // Calculate level based on completed goals
+    // Each level requires 5 more goals than the previous level
+    let currentLevel = 1
+    let goalsForNextLevel = 5
+    let remainingGoals = completed
+
+    while (remainingGoals >= goalsForNextLevel) {
+      remainingGoals -= goalsForNextLevel
+      currentLevel++
+      goalsForNextLevel += 5
+    }
+
+    setLevel(currentLevel)
+    setNextLevelGoals(goalsForNextLevel - remainingGoals)
+  }, [goals])
 
   return (
     <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700">
@@ -24,13 +52,13 @@ export function LifeProgressTracker() {
               </div>
               <div>
                 <p className="text-sm text-gray-400">Current Level</p>
-                <p className="text-xl font-bold">Level 7</p>
+                <p className="text-xl font-bold">Level {level}</p>
               </div>
             </div>
 
             <div className="text-right">
               <p className="text-sm text-gray-400">Next Level</p>
-              <p className="text-lg">3 goals away</p>
+              <p className="text-lg">{nextLevelGoals} goals away</p>
             </div>
           </div>
 
@@ -41,10 +69,15 @@ export function LifeProgressTracker() {
                   <Star className="h-4 w-4 text-yellow-500 mr-2" />
                   Completed Goals
                 </span>
-                <span className="text-sm font-medium">12/20</span>
+                <span className="text-sm font-medium">
+                  {completedGoals}/{totalGoals}
+                </span>
               </div>
               <div className="w-full bg-gray-700 rounded-full h-2">
-                <div className="bg-yellow-500 h-2 rounded-full" style={{ width: "60%" }}></div>
+                <div
+                  className="bg-yellow-500 h-2 rounded-full"
+                  style={{ width: totalGoals > 0 ? `${(completedGoals / totalGoals) * 100}%` : "0%" }}
+                ></div>
               </div>
             </div>
 
@@ -52,12 +85,17 @@ export function LifeProgressTracker() {
               <div className="flex justify-between mb-1">
                 <span className="text-sm flex items-center">
                   <Award className="h-4 w-4 text-indigo-400 mr-2" />
-                  Achievements
+                  Level Progress
                 </span>
-                <span className="text-sm font-medium">7/15</span>
+                <span className="text-sm font-medium">
+                  {5 - (nextLevelGoals % 5)}/{5}
+                </span>
               </div>
               <div className="w-full bg-gray-700 rounded-full h-2">
-                <div className="bg-indigo-500 h-2 rounded-full" style={{ width: "47%" }}></div>
+                <div
+                  className="bg-indigo-500 h-2 rounded-full"
+                  style={{ width: `${((5 - (nextLevelGoals % 5)) / 5) * 100}%` }}
+                ></div>
               </div>
             </div>
           </div>
@@ -80,7 +118,7 @@ export function LifeProgressTracker() {
                 </div>
                 <div>
                   <p className="text-sm font-medium">Goal Getter</p>
-                  <p className="text-xs text-gray-400">Completed 5 goals</p>
+                  <p className="text-xs text-gray-400">Completed {completedGoals} goals</p>
                 </div>
               </div>
             </div>

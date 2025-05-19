@@ -1,201 +1,106 @@
 "use client"
 
-import { useState } from "react"
-import { Plus, Edit2, Save, X } from "lucide-react"
+import Link from "next/link"
 
-interface ScheduleItem {
-  id: string
-  time: string
-  activity: string
-  category: string
-}
+import { useState, useEffect } from "react"
+import { CheckCircle, Circle } from "lucide-react"
+import { useGoals } from "@/contexts/goal-context"
+import type { Task } from "@/types/goals"
 
 export function DailyPlanSummary() {
-  const [schedule, setSchedule] = useState<ScheduleItem[]>([
-    { id: "1", time: "07:00 AM", activity: "Morning Routine", category: "Personal" },
-    { id: "2", time: "08:30 AM", activity: "Team Meeting", category: "Work" },
-    { id: "3", time: "10:00 AM", activity: "Project Work", category: "Work" },
-    { id: "4", time: "12:00 PM", activity: "Lunch Break", category: "Personal" },
-    { id: "5", time: "01:00 PM", activity: "Client Call", category: "Work" },
-    { id: "6", time: "03:00 PM", activity: "Gym Session", category: "Health" },
-    { id: "7", time: "05:00 PM", activity: "Reading Time", category: "Learning" },
-    { id: "8", time: "07:00 PM", activity: "Dinner", category: "Personal" },
-  ])
+  const { tasks, getTodaysTasks, completeTask, updateTask, deleteTask } = useGoals()
+  const [todaysTasks, setTodaysTasks] = useState<Task[]>([])
+  const [isLoading, setIsLoading] = useState(true)
 
-  const [isEditing, setIsEditing] = useState(false)
-  const [newActivity, setNewActivity] = useState({ time: "", activity: "", category: "Personal" })
-  const [editingId, setEditingId] = useState<string | null>(null)
-
-  const categories = ["Personal", "Work", "Health", "Learning", "Social"]
+  // Load today's tasks
+  useEffect(() => {
+    const dailyTasks = getTodaysTasks()
+    // Sort by scheduled time
+    dailyTasks.sort((a, b) => {
+      if (!a.scheduledTime) return 1
+      if (!b.scheduledTime) return -1
+      return new Date(a.scheduledTime).getTime() - new Date(b.scheduledTime).getTime()
+    })
+    setTodaysTasks(dailyTasks)
+    setIsLoading(false)
+  }, [getTodaysTasks, tasks])
 
   const getCategoryColor = (category: string) => {
     switch (category) {
-      case "Work":
+      case "Career":
         return "bg-blue-500"
-      case "Personal":
-        return "bg-purple-500"
       case "Health":
         return "bg-green-500"
-      case "Learning":
-        return "bg-yellow-500"
-      case "Social":
+      case "Relationships":
         return "bg-pink-500"
+      case "Personal Growth":
+        return "bg-purple-500"
+      case "Finance":
+        return "bg-yellow-500"
+      case "Recreation":
+        return "bg-red-500"
+      case "Home":
+        return "bg-orange-500"
       default:
         return "bg-gray-500"
     }
   }
 
-  const handleAddActivity = () => {
-    if (newActivity.time && newActivity.activity) {
-      setSchedule([...schedule, { id: Date.now().toString(), ...newActivity }])
-      setNewActivity({ time: "", activity: "", category: "Personal" })
-    }
-  }
-
-  const startEditing = (item: ScheduleItem) => {
-    setEditingId(item.id)
-    setNewActivity({
-      time: item.time,
-      activity: item.activity,
-      category: item.category,
-    })
-  }
-
-  const saveEdit = () => {
-    if (editingId && newActivity.time && newActivity.activity) {
-      setSchedule(
-        schedule.map((item) =>
-          item.id === editingId
-            ? { ...item, time: newActivity.time, activity: newActivity.activity, category: newActivity.category }
-            : item,
-        ),
-      )
-      setEditingId(null)
-      setNewActivity({ time: "", activity: "", category: "Personal" })
-    }
-  }
-
-  const cancelEdit = () => {
-    setEditingId(null)
-    setNewActivity({ time: "", activity: "", category: "Personal" })
-  }
-
-  const removeActivity = (id: string) => {
-    setSchedule(schedule.filter((item) => item.id !== id))
+  if (isLoading) {
+    return <div className="flex justify-center py-8">Loading today's plan...</div>
   }
 
   return (
     <div className="space-y-4">
       <div className="flex justify-between items-center">
         <h3 className="font-medium">Today's Schedule</h3>
-        <button className="text-sm text-indigo-400 hover:text-indigo-300" onClick={() => setIsEditing(!isEditing)}>
-          {isEditing ? "Done" : "Edit Plan"}
-        </button>
+        <Link href="/tasks" className="text-sm text-indigo-400 hover:text-indigo-300">
+          Manage Tasks
+        </Link>
       </div>
 
-      {isEditing && (
-        <div className="bg-gray-700/50 p-3 rounded-lg space-y-2">
-          <div className="grid grid-cols-3 gap-2">
-            <input
-              type="text"
-              placeholder="Time (e.g. 09:00 AM)"
-              value={newActivity.time}
-              onChange={(e) => setNewActivity({ ...newActivity, time: e.target.value })}
-              className="px-3 py-1 bg-gray-700 border border-gray-600 rounded-lg text-white text-sm focus:outline-none focus:ring-1 focus:ring-indigo-500"
-            />
-            <input
-              type="text"
-              placeholder="Activity"
-              value={newActivity.activity}
-              onChange={(e) => setNewActivity({ ...newActivity, activity: e.target.value })}
-              className="px-3 py-1 bg-gray-700 border border-gray-600 rounded-lg text-white text-sm focus:outline-none focus:ring-1 focus:ring-indigo-500"
-            />
-            <select
-              value={newActivity.category}
-              onChange={(e) => setNewActivity({ ...newActivity, category: e.target.value })}
-              className="px-3 py-1 bg-gray-700 border border-gray-600 rounded-lg text-white text-sm focus:outline-none focus:ring-1 focus:ring-indigo-500"
-            >
-              {categories.map((category) => (
-                <option key={category} value={category}>
-                  {category}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="flex justify-end">
-            {editingId ? (
-              <div className="space-x-2">
-                <button
-                  onClick={saveEdit}
-                  className="px-3 py-1 bg-indigo-600 hover:bg-indigo-700 rounded-lg text-sm flex items-center"
-                >
-                  <Save className="h-3 w-3 mr-1" /> Save
-                </button>
-                <button
-                  onClick={cancelEdit}
-                  className="px-3 py-1 bg-gray-600 hover:bg-gray-700 rounded-lg text-sm flex items-center"
-                >
-                  <X className="h-3 w-3 mr-1" /> Cancel
-                </button>
-              </div>
-            ) : (
-              <button
-                onClick={handleAddActivity}
-                className="px-3 py-1 bg-indigo-600 hover:bg-indigo-700 rounded-lg text-sm flex items-center"
-              >
-                <Plus className="h-3 w-3 mr-1" /> Add
-              </button>
-            )}
-          </div>
-        </div>
-      )}
-
       <div className="space-y-3 max-h-[300px] overflow-y-auto pr-1">
-        {schedule
-          .sort((a, b) => {
-            // Convert time strings to comparable values (assuming 12-hour format)
-            const timeA = a.time.replace(/(\d+):(\d+) (AM|PM)/, (_, h, m, ampm) => {
-              let hour = Number.parseInt(h)
-              if (ampm === "PM" && hour < 12) hour += 12
-              if (ampm === "AM" && hour === 12) hour = 0
-              return `${hour.toString().padStart(2, "0")}:${m}`
-            })
+        {todaysTasks.length > 0 ? (
+          todaysTasks.map((task) => (
+            <div
+              key={task.id}
+              className={`flex items-center p-3 rounded-lg group ${task.isCompleted ? "bg-gray-700/30" : "bg-gray-700/50"}`}
+            >
+              <button
+                onClick={() => completeTask(task.id)}
+                className={`mr-3 ${task.isCompleted ? "text-indigo-400" : "text-gray-400"}`}
+              >
+                {task.isCompleted ? <CheckCircle className="h-5 w-5" /> : <Circle className="h-5 w-5" />}
+              </button>
 
-            const timeB = b.time.replace(/(\d+):(\d+) (AM|PM)/, (_, h, m, ampm) => {
-              let hour = Number.parseInt(h)
-              if (ampm === "PM" && hour < 12) hour += 12
-              if (ampm === "AM" && hour === 12) hour = 0
-              return `${hour.toString().padStart(2, "0")}:${m}`
-            })
-
-            return timeA.localeCompare(timeB)
-          })
-          .map((item) => (
-            <div key={item.id} className="flex items-start group">
-              <div className="w-20 text-sm text-gray-400">{item.time}</div>
               <div className="flex-1">
                 <div className="flex items-center">
-                  <div className={`w-2 h-2 rounded-full mr-2 ${getCategoryColor(item.category)}`}></div>
-                  <span>{item.activity}</span>
-                  {isEditing && (
-                    <div className="ml-auto flex space-x-1">
-                      <button onClick={() => startEditing(item)} className="text-gray-400 hover:text-indigo-400">
-                        <Edit2 className="h-3 w-3" />
-                      </button>
-                      <button onClick={() => removeActivity(item.id)} className="text-gray-400 hover:text-red-400">
-                        <X className="h-3 w-3" />
-                      </button>
-                    </div>
+                  <span className={`${task.isCompleted ? "text-gray-400 line-through" : "text-white"}`}>
+                    {task.title}
+                  </span>
+                  {task.isTopPriority && (
+                    <span className="ml-2 inline-flex items-center px-1.5 py-0.5 rounded-full text-xs font-medium bg-indigo-900/60 text-indigo-300">
+                      Focus
+                    </span>
                   )}
                 </div>
-                <div className="text-xs text-gray-400 ml-4">{item.category}</div>
+
+                <div className="flex items-center text-xs text-gray-400 mt-1">
+                  <span className={`inline-block h-2 w-2 rounded-full mr-1 ${getCategoryColor(task.category)}`}></span>
+                  {task.category}
+                  {task.scheduledTime && (
+                    <>
+                      <span className="mx-2">•</span>
+                      {new Date(task.scheduledTime).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+                    </>
+                  )}
+                </div>
               </div>
             </div>
-          ))}
-
-        {schedule.length === 0 && (
-          <div className="text-center py-6 text-gray-400">
-            <p>No activities scheduled for today.</p>
+          ))
+        ) : (
+          <div className="text-center py-8 text-gray-400">
+            <p>No tasks scheduled for today.</p>
           </div>
         )}
       </div>

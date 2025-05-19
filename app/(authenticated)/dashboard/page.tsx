@@ -10,15 +10,20 @@ import { WeeklyGoalsList } from "@/components/dashboard/weekly-goals-list"
 import { WelcomeDashboard } from "@/components/onboarding/welcome-dashboard"
 import { FeatureTour } from "@/components/ui/feature-tour"
 import { Info, HelpCircle } from "lucide-react"
+import { useGoals } from "@/contexts/goal-context"
 
 export default function DashboardPage() {
   const [isLoading, setIsLoading] = useState(true)
   const [showWelcomeDashboard, setShowWelcomeDashboard] = useState(false)
   const [showFeatureTour, setShowFeatureTour] = useState(false)
+  const { generateTasksFromTemplates } = useGoals()
 
   useEffect(() => {
     // Check if first time user
     const isFirstTimeUser = localStorage.getItem("isFirstTimeUser") === "true"
+
+    // Generate tasks from templates for relationship goals
+    generateTasksFromTemplates()
 
     // Simulate loading
     const timer = setTimeout(() => {
@@ -33,7 +38,7 @@ export default function DashboardPage() {
     }, 1000)
 
     return () => clearTimeout(timer)
-  }, [])
+  }, [generateTasksFromTemplates])
 
   const handleDismissWelcome = () => {
     setShowWelcomeDashboard(false)
