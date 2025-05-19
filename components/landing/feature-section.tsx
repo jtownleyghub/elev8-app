@@ -1,36 +1,36 @@
-import { BarChart2, Calendar, Clock, Compass, Layout, Target } from "lucide-react"
+import { Calendar, Clock, Compass, Star, Lightbulb, Heart } from "lucide-react"
 
 export function FeatureSection() {
   const features = [
     {
-      icon: Target,
-      title: "Goal Tracking",
-      description: "Set meaningful goals across different life areas and track your progress with visual dashboards.",
+      icon: Star,
+      title: "Dream Tracking",
+      description: "Set meaningful aspirational goals and track your journey toward achieving your dreams.",
     },
     {
       icon: Calendar,
-      title: "Task Management",
-      description: "Break down your goals into actionable tasks and manage your daily priorities effectively.",
+      title: "Daily Task Management",
+      description: "Efficiently handle your daily responsibilities while making space for what truly matters.",
     },
     {
       icon: Compass,
       title: "Life Balance",
-      description: "Maintain balance across all areas of your life with our life wheel visualization and insights.",
+      description: "Find harmony between your daily obligations and your long-term aspirations.",
     },
     {
       icon: Clock,
-      title: "Habit Building",
-      description: "Create and maintain positive habits with streak tracking and gentle reminders.",
+      title: "Smart Scheduling",
+      description: "Our AI helps you find time for your dreams in your busy schedule, one step at a time.",
     },
     {
-      icon: BarChart2,
-      title: "Progress Analytics",
-      description: "Visualize your progress over time with beautiful charts and actionable insights.",
+      icon: Lightbulb,
+      title: "Inspiration Library",
+      description: "Browse hundreds of aspirational goals and bucket list ideas to discover what moves you.",
     },
     {
-      icon: Layout,
-      title: "Customizable Dashboard",
-      description: "Personalize your dashboard to focus on what matters most to you.",
+      icon: Heart,
+      title: "Progress Celebration",
+      description: "Celebrate milestones on your journey to achieving your most meaningful dreams.",
     },
   ]
 
@@ -41,9 +41,9 @@ export function FeatureSection() {
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-indigo-900/60 text-indigo-300 text-sm font-medium mb-4">
             Features
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Everything you need to reach your potential</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Balance daily life. Make time for dreams.</h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Our comprehensive toolkit helps you stay organized, motivated, and on track to achieve your goals.
+            Our comprehensive toolkit helps you manage the everyday while creating space for what truly matters to you.
           </p>
         </div>
 

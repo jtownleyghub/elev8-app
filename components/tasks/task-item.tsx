@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import type { Task } from "@/types/goals"
-import { CheckCircle, Circle, Edit2, Trash2, Calendar, Clock, Flag } from "lucide-react"
+import { CheckCircle, Circle, Edit2, Trash2, Calendar, Clock, Flag, ArrowRight } from "lucide-react"
 import { TaskForm } from "./task-form"
 
 interface TaskItemProps {
@@ -10,9 +10,10 @@ interface TaskItemProps {
   onComplete: (taskId: string) => void
   onUpdate: (task: Task) => void
   onDelete: (taskId: string) => void
+  onPostpone?: (taskId: string) => void
 }
 
-export function TaskItem({ task, onComplete, onUpdate, onDelete }: TaskItemProps) {
+export function TaskItem({ task, onComplete, onUpdate, onDelete, onPostpone }: TaskItemProps) {
   const [isEditing, setIsEditing] = useState(false)
 
   const getPriorityColor = (priority: string) => {
@@ -89,6 +90,11 @@ export function TaskItem({ task, onComplete, onUpdate, onDelete }: TaskItemProps
               Focus
             </span>
           )}
+          {task.fromTemplate && (
+            <span className="ml-2 inline-flex items-center px-1.5 py-0.5 rounded-full text-xs font-medium bg-pink-900/60 text-pink-300">
+              Template
+            </span>
+          )}
         </div>
 
         {task.description && (
@@ -123,6 +129,15 @@ export function TaskItem({ task, onComplete, onUpdate, onDelete }: TaskItemProps
       </div>
 
       <div className="flex space-x-1 opacity-0 group-hover:opacity-100 transition-opacity">
+        {onPostpone && !task.isCompleted && (
+          <button
+            onClick={() => onPostpone(task.id)}
+            className="p-1 text-gray-400 hover:text-yellow-400 rounded-full hover:bg-gray-700"
+            title="Postpone to tomorrow"
+          >
+            <ArrowRight className="h-4 w-4" />
+          </button>
+        )}
         <button
           onClick={() => setIsEditing(true)}
           className="p-1 text-gray-400 hover:text-indigo-400 rounded-full hover:bg-gray-700"

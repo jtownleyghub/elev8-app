@@ -9,21 +9,21 @@ export function HeroSection() {
           <div className="flex-1 space-y-6">
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-indigo-900/60 text-indigo-300 text-sm font-medium mb-2">
               <span className="flex h-2 w-2 rounded-full bg-indigo-400 mr-2"></span>
-              New: Goal Templates Library
+              New: Aspirational Goal Library
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
-              Track your goals, build habits, elevate your life
+              Balance your daily life. Achieve your dreams.
             </h1>
             <p className="text-xl text-gray-300 max-w-2xl">
-              Elev8 helps you track your personal development journey, build consistent habits, and achieve your goals
-              across all areas of life.
+              Elev8 helps you manage your daily tasks while making time for what truly matters—your aspirations, dreams,
+              and bucket list goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link
                 href="/onboarding"
                 className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium text-center inline-flex items-center justify-center transition-colors"
               >
-                Get Started — It's Free
+                Start Your Journey — It's Free
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
               <Link
@@ -36,11 +36,11 @@ export function HeroSection() {
             <div className="pt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="flex items-center text-gray-300">
                 <CheckCircle className="h-5 w-5 text-indigo-400 mr-2" />
-                <span>Goal tracking</span>
+                <span>Daily task management</span>
               </div>
               <div className="flex items-center text-gray-300">
                 <CheckCircle className="h-5 w-5 text-indigo-400 mr-2" />
-                <span>Habit building</span>
+                <span>Dream achievement</span>
               </div>
               <div className="flex items-center text-gray-300">
                 <CheckCircle className="h-5 w-5 text-indigo-400 mr-2" />
@@ -52,8 +52,8 @@ export function HeroSection() {
             <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl blur-xl opacity-75"></div>
             <div className="relative bg-gray-900 rounded-xl overflow-hidden border border-gray-800 shadow-2xl">
               <img
-                src="/goals-tasks-dashboard.png"
-                alt="Elev8 app dashboard"
+                src="/aspirations/dashboard-dreams.png"
+                alt="Elev8 app dashboard showing aspirational goals and daily tasks"
                 className="rounded-lg w-full"
                 width={600}
                 height={400}

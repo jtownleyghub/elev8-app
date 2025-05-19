@@ -1,0 +1,935 @@
+{
+  "Finance": [
+    {
+      "templateId": "finance-save-5000",
+      "title": "Save £5,000 in 52 Weeks",
+      "description": "A structured savings plan to help you save £5,000 over the course of a year with weekly tasks and check-ins.",
+      "defaultFrequency": "Weekly",
+      "duration": "52 weeks",
+      "difficulty": "Medium",
+      "popular": true,
+      "tasks": [
+        {
+          "title": "Set up a dedicated savings account",
+          "description": "Open a high-interest savings account specifically for this goal",
+          "suggestedDay": "Monday",
+          "estimatedMins": 30,
+          "sequence": 1
+        },
+        {
+          "title": "Create a weekly budget",
+          "description": "Plan your weekly expenses and identify areas to cut back",
+          "suggestedDay": "Tuesday",
+          "estimatedMins": 45,
+          "sequence": 2
+        },
+        {
+          "title": "Set up automatic transfers",
+          "description": "Arrange for £96 to be automatically transferred to your savings account each week",
+          "suggestedDay": "Wednesday",
+          "estimatedMins": 20,
+          "sequence": 3
+        },
+        {
+          "title": "Track your first week's expenses",
+          "description": "Record all your expenses for the first week to identify spending patterns",
+          "suggestedDay": "Sunday",
+          "estimatedMins": 30,
+          "sequence": 4
+        },
+        {
+          "title": "Weekly savings check-in",
+          "description": "Review your progress and adjust your budget as needed",
+          "suggestedDay": "Sunday",
+          "estimatedMins": 15,
+          "sequence": 5,
+          "recurring": true,
+          "recurrenceFrequency": "Weekly"
+        },
+        {
+          "title": "Monthly savings review",
+          "description": "Analyze your monthly savings progress and make adjustments to your plan",
+          "suggestedDay": "LastDayOfMonth",
+          "estimatedMins": 30,
+          "sequence": 6,
+          "recurring": true,
+          "recurrenceFrequency": "Monthly"
+        },
+        {
+          "title": "Quarterly financial check-up",
+          "description": "Comprehensive review of your savings progress and financial health",
+          "suggestedDay": "FirstDayOfQuarter",
+          "estimatedMins": 60,
+          "sequence": 7,
+          "recurring": true,
+          "recurrenceFrequency": "Quarterly"
+        }
+      ]
+    },
+    {
+      "templateId": "finance-debt-free",
+      "title": "Become Debt-Free in 12 Months",
+      "description": "A structured plan to help you pay off your debts and become debt-free within a year.",
+      "defaultFrequency": "Weekly",
+      "duration": "12 months",
+      "difficulty": "Hard",
+      "popular": true,
+      "tasks": [
+        {
+          "title": "List all your debts",
+          "description": "Create a comprehensive list of all your debts, including amounts, interest rates, and minimum payments",
+          "suggestedDay": "Monday",
+          "estimatedMins": 60,
+          "sequence": 1
+        },
+        {
+          "title": "Choose a debt repayment strategy",
+          "description": "Decide between the snowball method (smallest debt first) or avalanche method (highest interest first)",
+          "suggestedDay": "Tuesday",
+          "estimatedMins": 45,
+          "sequence": 2
+        },
+        {
+          "title": "Create a debt repayment budget",
+          "description": "Allocate funds for debt repayment in your monthly budget",
+          "suggestedDay": "Wednesday",
+          "estimatedMins": 60,
+          "sequence": 3
+        },
+        {
+          "title": "Contact creditors for better rates",
+          "description": "Call your creditors to negotiate lower interest rates",
+          "suggestedDay": "Thursday",
+          "estimatedMins": 120,
+          "sequence": 4
+        },
+        {
+          "title": "Set up automatic payments",
+          "description": "Arrange for automatic payments to ensure you never miss a payment",
+          "suggestedDay": "Friday",
+          "estimatedMins": 30,
+          "sequence": 5
+        },
+        {
+          "title": "Weekly debt check-in",
+          "description": "Review your progress and stay motivated",
+          "suggestedDay": "Sunday",
+          "estimatedMins": 15,
+          "sequence": 6,
+          "recurring": true,
+          "recurrenceFrequency": "Weekly"
+        },
+        {
+          "title": "Monthly debt progress review",
+          "description": "Analyze your monthly debt reduction progress and adjust your plan",
+          "suggestedDay": "LastDayOfMonth",
+          "estimatedMins": 30,
+          "sequence": 7,
+          "recurring": true,
+          "recurrenceFrequency": "Monthly"
+        }
+      ]
+    }
+  ],
+  "Career": [
+    {
+      "templateId": "career-promotion",
+      "title": "Get That Promotion in 6 Months",
+      "description": "A structured plan to help you work towards and achieve a promotion at work within 6 months.",
+      "defaultFrequency": "Weekly",
+      "duration": "6 months",
+      "difficulty": "Medium",
+      "popular": true,
+      "tasks": [
+        {
+          "title": "Define your promotion goal",
+          "description": "Clearly define the position you want and the requirements for promotion",
+          "suggestedDay": "Monday",
+          "estimatedMins": 45,
+          "sequence": 1
+        },
+        {
+          "title": "Meet with your manager",
+          "description": "Discuss your career aspirations and get feedback on what you need to improve",
+          "suggestedDay": "Wednesday",
+          "estimatedMins": 60,
+          "sequence": 2
+        },
+        {
+          "title": "Create a skill development plan",
+          "description": "Identify the skills you need to develop to qualify for the promotion",
+          "suggestedDay": "Friday",
+          "estimatedMins": 60,
+          "sequence": 3
+        },
+        {
+          "title": "Take on a high-visibility project",
+          "description": "Volunteer for a project that will showcase your abilities to decision-makers",
+          "suggestedDay": "Monday",
+          "estimatedMins": 30,
+          "sequence": 4
+        },
+        {
+          "title": "Weekly skill development session",
+          "description": "Dedicate time each week to developing a skill needed for promotion",
+          "suggestedDay": "Tuesday",
+          "estimatedMins": 90,
+          "sequence": 5,
+          "recurring": true,
+          "recurrenceFrequency": "Weekly"
+        },
+        {
+          "title": "Monthly progress review with manager",
+          "description": "Regular check-ins with your manager to discuss your progress and get feedback",
+          "suggestedDay": "FirstMondayOfMonth",
+          "estimatedMins": 45,
+          "sequence": 6,
+          "recurring": true,
+          "recurrenceFrequency": "Monthly"
+        },
+        {
+          "title": "Document your achievements",
+          "description": "Keep a record of your accomplishments, projects, and positive feedback",
+          "suggestedDay": "Friday",
+          "estimatedMins": 30,
+          "sequence": 7,
+          "recurring": true,
+          "recurrenceFrequency": "Weekly"
+        }
+      ]
+    },
+    {
+      "templateId": "career-work-abroad",
+      "title": "Work Abroad for a Year",
+      "description": "A comprehensive plan to help you find work opportunities abroad and prepare for an international career experience.",
+      "defaultFrequency": "Weekly",
+      "duration": "12 months",
+      "difficulty": "Hard",
+      "popular": true,
+      "isAspirational": true,
+      "image": "/aspirations/work-abroad.png",
+      "tasks": [
+        {
+          "title": "Research potential countries",
+          "description": "Investigate countries with good job opportunities in your field and favorable visa policies",
+          "suggestedDay": "Monday",
+          "estimatedMins": 120,
+          "sequence": 1
+        },
+        {
+          "title": "Update your resume/CV for international applications",
+          "description": "Adapt your resume to international standards and highlight relevant cross-cultural experience",
+          "suggestedDay": "Wednesday",
+          "estimatedMins": 90,
+          "sequence": 2
+        },
+        {
+          "title": "Research visa requirements",
+          "description": "Understand the work visa process for your target countries",
+          "suggestedDay": "Friday",
+          "estimatedMins": 60,
+          "sequence": 3
+        },
+        {
+          "title": "Start language learning (if applicable)",
+          "description": "Begin learning the basics of the language spoken in your target country",
+          "suggestedDay": "Tuesday",
+          "estimatedMins": 45,
+          "sequence": 4,
+          "recurring": true,
+          "recurrenceFrequency": "Weekly"
+        },
+        {
+          "title": "Research cost of living",
+          "description": "Calculate expected expenses in your target countries to prepare financially",
+          "suggestedDay": "Thursday",
+          "estimatedMins": 60,
+          "sequence": 5
+        },
+        {
+          "title": "Connect with expats on LinkedIn",
+          "description": "Reach out to people from your country who are working in your target location",
+          "suggestedDay": "Monday",
+          "estimatedMins": 45,
+          "sequence": 6
+        },
+        {
+          "title": "Research international job boards",
+          "description": "Find and bookmark job boards that specialize in international positions",
+          "suggestedDay": "Wednesday",
+          "estimatedMins": 60,
+          "sequence": 7
+        },
+        {
+          "title": "Weekly job search session",
+          "description": "Dedicate time to searching and applying for international positions",
+          "suggestedDay": "Saturday",
+          "estimatedMins": 120,
+          "sequence": 8,
+          "recurring": true,
+          "recurrenceFrequency": "Weekly"
+        }
+      ]
+    }
+  ],
+  "Health": [
+    {
+      "templateId": "health-run-10k",
+      "title": "Run a 10K in 10 Weeks",
+      "description": "A progressive training plan to help you build up to running a 10K race in 10 weeks.",
+      "defaultFrequency": "3x per week",
+      "duration": "10 weeks",
+      "difficulty": "Medium",
+      "popular": true,
+      "isAspirational": true,
+      "image": "/aspirations/run-10k.png",
+      "tasks": [
+        {
+          "title": "Get proper running shoes",
+          "description": "Visit a specialty running store to get fitted for proper running shoes",
+          "suggestedDay": "Monday",
+          "estimatedMins": 90,
+          "sequence": 1
+        },
+        {
+          "title": "Create a running playlist",
+          "description": "Put together a motivating playlist for your runs",
+          "suggestedDay": "Tuesday",
+          "estimatedMins": 30,
+          "sequence": 2
+        },
+        {
+          "title": "Week 1: Run 1 - 2km easy pace",
+          "description": "Start with an easy 2km run to establish your baseline",
+          "suggestedDay": "Monday",
+          "estimatedMins": 20,
+          "sequence": 3
+        },
+        {
+          "title": "Week 1: Run 2 - 2km with intervals",
+          "description": "2km run with 30-second fast intervals every 3 minutes",
+          "suggestedDay": "Wednesday",
+          "estimatedMins": 20,
+          "sequence": 4
+        },
+        {
+          "title": "Week 1: Run 3 - 3km easy pace",
+          "description": "Finish the week with a slightly longer easy run",
+          "suggestedDay": "Saturday",
+          "estimatedMins": 30,
+          "sequence": 5
+        },
+        {
+          "title": "Week 2: Run 1 - 3km easy pace",
+          "description": "Start week 2 with an easy 3km run",
+          "suggestedDay": "Monday",
+          "estimatedMins": 30,
+          "sequence": 6
+        },
+        {
+          "title": "Weekly progress check-in",
+          "description": "Record your progress and adjust your training plan as needed",
+          "suggestedDay": "Sunday",
+          "estimatedMins": 15,
+          "sequence": 7,
+          "recurring": true,
+          "recurrenceFrequency": "Weekly"
+        }
+      ]
+    },
+    {
+      "templateId": "health-meditation",
+      "title": "Establish a Daily Meditation Practice",
+      "description": "A structured plan to help you build a consistent daily meditation practice over 30 days.",
+      "defaultFrequency": "Daily",
+      "duration": "30 days",
+      "difficulty": "Easy",
+      "popular": true,
+      "isAspirational": true,
+      "image": "/aspirations/meditation.png",
+      "tasks": [
+        {
+          "title": "Learn basic meditation techniques",
+          "description": "Research and learn about different meditation techniques",
+          "suggestedDay": "Monday",
+          "estimatedMins": 45,
+          "sequence": 1
+        },
+        {
+          "title": "Set up a meditation space",
+          "description": "Create a quiet, comfortable space dedicated to your meditation practice",
+          "suggestedDay": "Tuesday",
+          "estimatedMins": 30,
+          "sequence": 2
+        },
+        {
+          "title": "Day 1: 5-minute meditation",
+          "description": "Start with a simple 5-minute breathing meditation",
+          "suggestedDay": "Wednesday",
+          "estimatedMins": 5,
+          "sequence": 3
+        },
+        {
+          "title": "Days 2-7: 5-minute daily meditation",
+          "description": "Continue with 5-minute daily meditation sessions",
+          "suggestedDay": "Daily",
+          "estimatedMins": 5,
+          "sequence": 4,
+          "recurring": true,
+          "recurrenceFrequency": "Daily",
+          "recurrenceCount": 6
+        },
+        {
+          "title": "Days 8-14: 10-minute daily meditation",
+          "description": "Increase to 10-minute daily meditation sessions",
+          "suggestedDay": "Daily",
+          "estimatedMins": 10,
+          "sequence": 5,
+          "recurring": true,
+          "recurrenceFrequency": "Daily",
+          "recurrenceCount": 7
+        },
+        {
+          "title": "Days 15-30: 15-minute daily meditation",
+          "description": "Increase to 15-minute daily meditation sessions",
+          "suggestedDay": "Daily",
+          "estimatedMins": 15,
+          "sequence": 6,
+          "recurring": true,
+          "recurrenceFrequency": "Daily",
+          "recurrenceCount": 16
+        },
+        {
+          "title": "Weekly reflection on meditation practice",
+          "description": "Reflect on your meditation practice and note any changes in your well-being",
+          "suggestedDay": "Sunday",
+          "estimatedMins": 15,
+          "sequence": 7,
+          "recurring": true,
+          "recurrenceFrequency": "Weekly",
+          "recurrenceCount": 4
+        }
+      ]
+    }
+  ],
+  "Travel": [
+    {
+      "templateId": "travel-japan",
+      "title": "Travel to Japan",
+      "description": "A comprehensive plan to help you prepare for and enjoy a trip to Japan.",
+      "defaultFrequency": "Weekly",
+      "duration": "6 months",
+      "difficulty": "Medium",
+      "popular": true,
+      "isAspirational": true,
+      "image": "/aspirations/japan-travel.png",
+      "tasks": [
+        {
+          "title": "Research best time to visit Japan",
+          "description": "Investigate seasonal considerations, festivals, and weather patterns",
+          "suggestedDay": "Monday",
+          "estimatedMins": 60,
+          "sequence": 1
+        },
+        {
+          "title": "Set a budget for your trip",
+          "description": "Calculate expected costs for flights, accommodation, food, activities, and souvenirs",
+          "suggestedDay": "Wednesday",
+          "estimatedMins": 90,
+          "sequence": 2
+        },
+        {
+          "title": "Create a savings plan",
+          "description": "Determine how much you need to save each month to fund your trip",
+          "suggestedDay": "Friday",
+          "estimatedMins": 45,
+          "sequence": 3
+        },
+        {
+          "title": "Research visa requirements",
+          "description": "Check if you need a visa to visit Japan and understand the application process",
+          "suggestedDay": "Monday",
+          "estimatedMins": 30,
+          "sequence": 4
+        },
+        {
+          "title": "Learn basic Japanese phrases",
+          "description": "Start learning essential Japanese phrases for travelers",
+          "suggestedDay": "Tuesday",
+          "estimatedMins": 30,
+          "sequence": 5,
+          "recurring": true,
+          "recurrenceFrequency": "Weekly"
+        },
+        {
+          "title": "Research must-visit destinations",
+          "description": "Create a list of cities, attractions, and experiences you want to include in your trip",
+          "suggestedDay": "Thursday",
+          "estimatedMins": 60,
+          "sequence": 6
+        },
+        {
+          "title": "Check passport validity",
+          "description": "Ensure your passport is valid for at least 6 months beyond your planned return date",
+          "suggestedDay": "Friday",
+          "estimatedMins": 15,
+          "sequence": 7
+        },
+        {
+          "title": "Research Japan Rail Pass",
+          "description": "Determine if the Japan Rail Pass would be cost-effective for your itinerary",
+          "suggestedDay": "Monday",
+          "estimatedMins": 45,
+          "sequence": 8
+        },
+        {
+          "title": "Monthly savings check-in",
+          "description": "Review your progress towards your travel savings goal",
+          "suggestedDay": "LastDayOfMonth",
+          "estimatedMins": 20,
+          "sequence": 9,
+          "recurring": true,
+          "recurrenceFrequency": "Monthly"
+        }
+      ]
+    },
+    {
+      "templateId": "travel-hot-air-balloon",
+      "title": "Fly in a Hot Air Balloon",
+      "description": "A plan to help you prepare for and experience the magic of a hot air balloon flight.",
+      "defaultFrequency": "Weekly",
+      "duration": "3 months",
+      "difficulty": "Easy",
+      "popular": false,
+      "isAspirational": true,
+      "image": "/aspirations/hot-air-balloon.png",
+      "tasks": [
+        {
+          "title": "Research local hot air balloon operators",
+          "description": "Find reputable companies that offer hot air balloon rides in your area or desired location",
+          "suggestedDay": "Monday",
+          "estimatedMins": 60,
+          "sequence": 1
+        },
+        {
+          "title": "Compare prices and packages",
+          "description": "Research different flight options, durations, and what's included in each package",
+          "suggestedDay": "Wednesday",
+          "estimatedMins": 45,
+          "sequence": 2
+        },
+        {
+          "title": "Check weather considerations",
+          "description": "Learn about the best seasons and weather conditions for hot air ballooning",
+          "suggestedDay": "Friday",
+          "estimatedMins": 30,
+          "sequence": 3
+        },
+        {
+          "title": "Save for the experience",
+          "description": "Set aside funds specifically for your hot air balloon adventure",
+          "suggestedDay": "Monday",
+          "estimatedMins": 20,
+          "sequence": 4,
+          "recurring": true,
+          "recurrenceFrequency": "Weekly"
+        },
+        {
+          "title": "Book your flight",
+          "description": "Reserve your hot air balloon experience for your preferred date",
+          "suggestedDay": "Monday",
+          "estimatedMins": 30,
+          "sequence": 5,
+          "offset": "30 days"
+        },
+        {
+          "title": "Prepare for your flight",
+          "description": "Research what to wear, what to bring, and what to expect during your balloon ride",
+          "suggestedDay": "Wednesday",
+          "estimatedMins": 45,
+          "sequence": 6,
+          "offset": "60 days"
+        },
+        {
+          "title": "Confirm your reservation",
+          "description": "Check in with the operator to confirm your booking and any last-minute details",
+          "suggestedDay": "Friday",
+          "estimatedMins": 15,
+          "sequence": 7,
+          "offset": "80 days"
+        }
+      ]
+    },
+    {
+      "templateId": "travel-pyramids-giza",
+      "title": "Visit the Pyramids of Giza",
+      "description": "A comprehensive plan to help you prepare for and experience the wonder of the Pyramids of Giza in Egypt.",
+      "defaultFrequency": "Weekly",
+      "duration": "6 months",
+      "difficulty": "Medium",
+      "popular": true,
+      "isAspirational": true,
+      "image": "/aspirations/pyramids-giza.png",
+      "tasks": [
+        {
+          "title": "Research best time to visit Egypt",
+          "description": "Investigate seasonal considerations, avoiding extreme heat, and tourist seasons",
+          "suggestedDay": "Monday",
+          "estimatedMins": 60,
+          "sequence": 1
+        },
+        {
+          "title": "Set a budget for your trip",
+          "description": "Calculate expected costs for flights, accommodation, food, activities, and souvenirs",
+          "suggestedDay": "Wednesday",
+          "estimatedMins": 90,
+          "sequence": 2
+        },
+        {
+          "title": "Create a savings plan",
+          "description": "Determine how much you need to save each month to fund your trip",
+          "suggestedDay": "Friday",
+          "estimatedMins": 45,
+          "sequence": 3
+        },
+        {
+          "title": "Research visa requirements for Egypt",
+          "description": "Check if you need a visa to visit Egypt and understand the application process",
+          "suggestedDay": "Monday",
+          "estimatedMins": 30,
+          "sequence": 4
+        },
+        {
+          "title": "Learn about Egyptian history",
+          "description": "Study the history of the Pyramids and ancient Egyptian civilization",
+          "suggestedDay": "Tuesday",
+          "estimatedMins": 60,
+          "sequence": 5,
+          "recurring": true,
+          "recurrenceFrequency": "Weekly"
+        },
+        {
+          "title": "Research guided tours vs. independent visits",
+          "description": "Compare options for visiting the Pyramids with a guide or on your own",
+          "suggestedDay": "Thursday",
+          "estimatedMins": 45,
+          "sequence": 6
+        },
+        {
+          "title": "Check passport validity",
+          "description": "Ensure your passport is valid for at least 6 months beyond your planned return date",
+          "suggestedDay": "Friday",
+          "estimatedMins": 15,
+          "sequence": 7
+        },
+        {
+          "title": "Research health and safety considerations",
+          "description": "Check recommended vaccinations and health precautions for visiting Egypt",
+          "suggestedDay": "Monday",
+          "estimatedMins": 45,
+          "sequence": 8
+        },
+        {
+          "title": "Monthly savings check-in",
+          "description": "Review your progress towards your travel savings goal",
+          "suggestedDay": "LastDayOfMonth",
+          "estimatedMins": 20,
+          "sequence": 9,
+          "recurring": true,
+          "recurrenceFrequency": "Monthly"
+        }
+      ]
+    }
+  ],
+  "Personal Growth": [
+    {
+      "templateId": "personal-learn-language",
+      "title": "Learn the Basics of a New Language in 90 Days",
+      "description": "A structured plan to help you learn the fundamentals of a new language in 90 days.",
+      "defaultFrequency": "Daily",
+      "duration": "90 days",
+      "difficulty": "Medium",
+      "popular": true,
+      "tasks": [
+        {
+          "title": "Choose a language learning app",
+          "description": "Research and select a language learning app (e.g., Duolingo, Babbel, Rosetta Stone)",
+          "suggestedDay": "Monday",
+          "estimatedMins": 60,
+          "sequence": 1
+        },
+        {
+          "title": "Set specific language goals",
+          "description": "Define what 'basics' means to you (e.g., 500 words, basic conversations)",
+          "suggestedDay": "Tuesday",
+          "estimatedMins": 30,
+          "sequence": 2
+        },
+        {
+          "title": "Create a study schedule",
+          "description": "Plan when you'll study each day and what resources you'll use",
+          "suggestedDay": "Wednesday",
+          "estimatedMins": 45,
+          "sequence": 3
+        },
+        {
+          "title": "Daily language practice",
+          "description": "Spend time each day on your language learning app",
+          "suggestedDay": "Daily",
+          "estimatedMins": 20,
+          "sequence": 4,
+          "recurring": true,
+          "recurrenceFrequency": "Daily"
+        },
+        {
+          "title": "Weekly vocabulary review",
+          "description": "Review all the vocabulary you've learned that week",
+          "suggestedDay": "Sunday",
+          "estimatedMins": 30,
+          "sequence": 5,
+          "recurring": true,
+          "recurrenceFrequency": "Weekly"
+        },
+        {
+          "title": "Monthly progress assessment",
+          "description": "Take a quiz or assessment to gauge your progress",
+          "suggestedDay": "LastDayOfMonth",
+          "estimatedMins": 45,
+          "sequence": 6,
+          "recurring": true,
+          "recurrenceFrequency": "Monthly",
+          "recurrenceCount": 3
+        },
+        {
+          "title": "Find a language exchange partner",
+          "description": "Connect with a native speaker for practice conversations",
+          "suggestedDay": "Monday",
+          "estimatedMins": 60,
+          "sequence": 7,
+          "offset": "30 days"
+        }
+      ]
+    },
+    {
+      "templateId": "personal-write-book",
+      "title": "Write a Book in One Year",
+      "description": "A structured plan to help you write your first book over the course of a year.",
+      "defaultFrequency": "Daily",
+      "duration": "12 months",
+      "difficulty": "Hard",
+      "popular": true,
+      "isAspirational": true,
+      "image": "/aspirations/write-book.png",
+      "tasks": [
+        {
+          "title": "Define your book concept",
+          "description": "Clarify the main idea, genre, and target audience for your book",
+          "suggestedDay": "Monday",
+          "estimatedMins": 90,
+          "sequence": 1
+        },
+        {
+          "title": "Create an outline",
+          "description": "Develop a high-level outline of your book's structure and main points",
+          "suggestedDay": "Wednesday",
+          "estimatedMins": 120,
+          "sequence": 2
+        },
+        {
+          "title": "Set up a writing space",
+          "description": "Create a dedicated, distraction-free environment for writing",
+          "suggestedDay": "Friday",
+          "estimatedMins": 60,
+          "sequence": 3
+        },
+        {
+          "title": "Establish a writing routine",
+          "description": "Decide when and how long you'll write each day",
+          "suggestedDay": "Saturday",
+          "estimatedMins": 45,
+          "sequence": 4
+        },
+        {
+          "title": "Daily writing session",
+          "description": "Write at least 500 words",
+          "suggestedDay": "Daily",
+          "estimatedMins": 60,
+          "sequence": 5,
+          "recurring": true,
+          "recurrenceFrequency": "Daily"
+        },
+        {
+          "title": "Weekly review and editing",
+          "description": "Review and edit the content you wrote during the week",
+          "suggestedDay": "Sunday",
+          "estimatedMins": 90,
+          "sequence": 6,
+          "recurring": true,
+          "recurrenceFrequency": "Weekly"
+        },
+        {
+          "title": "Monthly progress assessment",
+          "description": "Evaluate your progress and adjust your writing plan as needed",
+          "suggestedDay": "LastDayOfMonth",
+          "estimatedMins": 60,
+          "sequence": 7,
+          "recurring": true,
+          "recurrenceFrequency": "Monthly"
+        },
+        {
+          "title": "Join a writing group",
+          "description": "Find a local or online writing group for feedback and support",
+          "suggestedDay": "Monday",
+          "estimatedMins": 60,
+          "sequence": 8,
+          "offset": "30 days"
+        }
+      ]
+    }
+  ],
+  "Relationships": [
+    {
+      "templateId": "relationships-date-nights",
+      "title": "Weekly Date Nights for 3 Months",
+      "description": "A structured plan to help you and your partner enjoy regular date nights for 3 months.",
+      "defaultFrequency": "Weekly",
+      "duration": "3 months",
+      "difficulty": "Easy",
+      "popular": true,
+      "tasks": [
+        {
+          "title": "Brainstorm date night ideas",
+          "description": "Create a list of potential date night activities",
+          "suggestedDay": "Monday",
+          "estimatedMins": 45,
+          "sequence": 1
+        },
+        {
+          "title": "Discuss with your partner",
+          "description": "Share your ideas and get your partner's input",
+          "suggestedDay": "Tuesday",
+          "estimatedMins": 30,
+          "sequence": 2
+        },
+        {
+          "title": "Create a date night budget",
+          "description": "Determine how much you can spend on date nights",
+          "suggestedDay": "Wednesday",
+          "estimatedMins": 30,
+          "sequence": 3
+        },
+        {
+          "title": "Schedule first date night",
+          "description": "Plan the details for your first date night",
+          "suggestedDay": "Thursday",
+          "estimatedMins": 20,
+          "sequence": 4
+        },
+        {
+          "title": "Weekly date night",
+          "description": "Enjoy a special evening with your partner",
+          "suggestedDay": "Friday",
+          "estimatedMins": 180,
+          "sequence": 5,
+          "recurring": true,
+          "recurrenceFrequency": "Weekly"
+        },
+        {
+          "title": "Monthly date night reflection",
+          "description": "Discuss with your partner what date nights you enjoyed most",
+          "suggestedDay": "LastDayOfMonth",
+          "estimatedMins": 30,
+          "sequence": 6,
+          "recurring": true,
+          "recurrenceFrequency": "Monthly"
+        },
+        {
+          "title": "Plan a special date",
+          "description": "Plan a more elaborate or special date night",
+          "suggestedDay": "FirstDayOfMonth",
+          "estimatedMins": 45,
+          "sequence": 7,
+          "recurring": true,
+          "recurrenceFrequency": "Monthly"
+        }
+      ]
+    },
+    {
+      "templateId": "relationships-strengthen",
+      "title": "Strengthen a Key Relationship",
+      "description": "A thoughtful plan to deepen and improve an important relationship in your life.",
+      "defaultFrequency": "Weekly",
+      "duration": "3 months",
+      "difficulty": "Medium",
+      "popular": true,
+      "isAspirational": true,
+      "image": "/aspirations/strengthen-relationship.png",
+      "tasks": [
+        {
+          "title": "Identify relationship goals",
+          "description": "Define what you want to improve or achieve in this relationship",
+          "suggestedDay": "Monday",
+          "estimatedMins": 45,
+          "sequence": 1
+        },
+        {
+          "title": "Schedule a heart-to-heart conversation",
+          "description": "Plan a time to discuss your relationship and mutual goals",
+          "suggestedDay": "Wednesday",
+          "estimatedMins": 60,
+          "sequence": 2
+        },
+        {
+          "title": "Create a shared activity list",
+          "description": "Brainstorm activities you both enjoy or would like to try together",
+          "suggestedDay": "Friday",
+          "estimatedMins": 30,
+          "sequence": 3
+        },
+        {
+          "title": "Learn their love language",
+          "description": "Discover how they prefer to give and receive love and appreciation",
+          "suggestedDay": "Monday",
+          "estimatedMins": 45,
+          "sequence": 4
+        },
+        {
+          "title": "Weekly quality time",
+          "description": "Spend dedicated, distraction-free time together",
+          "suggestedDay": "Saturday",
+          "estimatedMins": 120,
+          "sequence": 5,
+          "recurring": true,
+          "recurrenceFrequency": "Weekly"
+        },
+        {
+          "title": "Practice active listening",
+          "description": "Focus on truly understanding their perspective without planning your response",
+          "suggestedDay": "Tuesday",
+          "estimatedMins": 30,
+          "sequence": 6,
+          "recurring": true,
+          "recurrenceFrequency": "Weekly"
+        },
+        {
+          "title": "Express appreciation",
+          "description": "Share specific things you appreciate about them",
+          "suggestedDay": "Thursday",
+          "estimatedMins": 15,
+          "sequence": 7,
+          "recurring": true,
+          "recurrenceFrequency": "Weekly"
+        },
+        {
+          "title": "Monthly relationship check-in",
+          "description": "Discuss what's working well and areas for improvement",
+          "suggestedDay": "LastSundayOfMonth",
+          "estimatedMins": 45,
+          "sequence": 8,
+          "recurring": true,
+          "recurrenceFrequency": "Monthly"
+        }
+      ]
+    }
+  ]
+}

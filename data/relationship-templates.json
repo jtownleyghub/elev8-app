@@ -1,0 +1,370 @@
+[
+  {
+    "relationshipType": "Spouse / Partner",
+    "templates": [
+      {
+        "templateId": "rekindle-romance",
+        "title": "Rekindle the Romance",
+        "description": "Bring back the spark with regular meaningful gestures.",
+        "defaultFrequency": "Weekly",
+        "tasks": [
+          {
+            "title": "Plan a date night",
+            "description": "Choose a restaurant, activity, or home-based date this week.",
+            "suggestedDay": "Friday",
+            "estimatedMins": 60
+          },
+          {
+            "title": "Write a heartfelt message",
+            "description": "Send a message or letter expressing appreciation or affection.",
+            "suggestedDay": "Wednesday",
+            "estimatedMins": 10
+          },
+          {
+            "title": "Ask a deep question",
+            "description": "Start a meaningful conversation — e.g. 'What made you smile this week?'",
+            "suggestedDay": "Sunday",
+            "estimatedMins": 5
+          }
+        ]
+      },
+      {
+        "templateId": "active-together",
+        "title": "Be More Active Together",
+        "description": "Build connection through physical movement.",
+        "defaultFrequency": "Weekly",
+        "tasks": [
+          {
+            "title": "Go for a walk together",
+            "description": "Take a 20-minute walk in nature or your neighbourhood.",
+            "suggestedDay": "Saturday",
+            "estimatedMins": 30
+          },
+          {
+            "title": "Try a new class",
+            "description": "Book a yoga, dance, or fitness class to try together.",
+            "suggestedDay": "Any",
+            "estimatedMins": 60
+          }
+        ]
+      },
+      {
+        "templateId": "celebrate-traditions",
+        "title": "Celebrate Traditions",
+        "description": "Honor and create meaningful traditions together.",
+        "defaultFrequency": "Monthly",
+        "tasks": [
+          {
+            "title": "Plan for upcoming holiday",
+            "description": "Discuss how you want to celebrate an upcoming holiday or special occasion.",
+            "suggestedDay": "Weekend",
+            "estimatedMins": 30,
+            "cultural": true
+          },
+          {
+            "title": "Create a new tradition",
+            "description": "Start a new tradition that's meaningful to both of you.",
+            "suggestedDay": "Any",
+            "estimatedMins": 45
+          },
+          {
+            "title": "Share family stories",
+            "description": "Exchange stories about family traditions from your childhood.",
+            "suggestedDay": "Sunday",
+            "estimatedMins": 20,
+            "cultural": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "relationshipType": "Child",
+    "templates": [
+      {
+        "templateId": "quality-time",
+        "title": "Spend Quality Time",
+        "description": "Prioritise bonding and attention with your child.",
+        "defaultFrequency": "3x per week",
+        "tasks": [
+          {
+            "title": "Playtime together",
+            "description": "Let your child choose the activity and be fully present.",
+            "suggestedDay": "Monday",
+            "estimatedMins": 30
+          },
+          {
+            "title": "Plan an outing",
+            "description": "Organise a trip to a park, museum or play centre.",
+            "suggestedDay": "Weekend",
+            "estimatedMins": 90
+          },
+          {
+            "title": "Story time",
+            "description": "Read a book aloud together before bed.",
+            "suggestedDay": "Wednesday",
+            "estimatedMins": 15
+          }
+        ]
+      },
+      {
+        "templateId": "share-cultural-experiences",
+        "title": "Share Cultural Experiences",
+        "description": "Connect through cultural heritage and traditions.",
+        "defaultFrequency": "Monthly",
+        "tasks": [
+          {
+            "title": "Cook a traditional meal together",
+            "description": "Prepare a dish from your cultural heritage and share its significance.",
+            "suggestedDay": "Weekend",
+            "estimatedMins": 60,
+            "cultural": true
+          },
+          {
+            "title": "Share stories from your childhood",
+            "description": "Tell stories about your own childhood and cultural experiences.",
+            "suggestedDay": "Any",
+            "estimatedMins": 20,
+            "cultural": true
+          },
+          {
+            "title": "Celebrate a cultural holiday",
+            "description": "Plan how to celebrate an upcoming cultural holiday together.",
+            "suggestedDay": "Holiday",
+            "estimatedMins": 120,
+            "cultural": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "relationshipType": "Parent",
+    "templates": [
+      {
+        "templateId": "stay-connected",
+        "title": "Stay Connected",
+        "description": "Maintain regular meaningful contact with your parent(s).",
+        "defaultFrequency": "Weekly",
+        "tasks": [
+          {
+            "title": "Regular check-in call",
+            "description": "Call to catch up on life updates and well-being.",
+            "suggestedDay": "Sunday",
+            "estimatedMins": 30
+          },
+          {
+            "title": "Share a memory",
+            "description": "Reminisce about a shared experience or memory.",
+            "suggestedDay": "Any",
+            "estimatedMins": 15
+          },
+          {
+            "title": "Plan next visit",
+            "description": "Coordinate schedules for your next in-person meeting.",
+            "suggestedDay": "Weekend",
+            "estimatedMins": 20
+          }
+        ]
+      },
+      {
+        "templateId": "honor-family-traditions",
+        "title": "Honor Family Traditions",
+        "description": "Preserve and celebrate family customs and heritage.",
+        "defaultFrequency": "Monthly",
+        "tasks": [
+          {
+            "title": "Document family recipes",
+            "description": "Ask about and record traditional family recipes.",
+            "suggestedDay": "Weekend",
+            "estimatedMins": 45,
+            "cultural": true
+          },
+          {
+            "title": "Plan holiday celebration",
+            "description": "Discuss plans for upcoming family holiday or celebration.",
+            "suggestedDay": "Week Before Holiday",
+            "estimatedMins": 30,
+            "cultural": true
+          },
+          {
+            "title": "Record family stories",
+            "description": "Document stories about family history and traditions.",
+            "suggestedDay": "Any",
+            "estimatedMins": 60,
+            "cultural": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "relationshipType": "Sibling",
+    "templates": [
+      {
+        "templateId": "sibling-bond",
+        "title": "Strengthen Sibling Bond",
+        "description": "Nurture your relationship with regular connection.",
+        "defaultFrequency": "Bi-weekly",
+        "tasks": [
+          {
+            "title": "Catch-up call",
+            "description": "Schedule a phone or video call to check in.",
+            "suggestedDay": "Weekend",
+            "estimatedMins": 30
+          },
+          {
+            "title": "Share something meaningful",
+            "description": "Send an article, song, or memory that made you think of them.",
+            "suggestedDay": "Any",
+            "estimatedMins": 10
+          },
+          {
+            "title": "Plan sibling activity",
+            "description": "Arrange a shared experience or outing together.",
+            "suggestedDay": "Any",
+            "estimatedMins": 20
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "relationshipType": "Friend",
+    "templates": [
+      {
+        "templateId": "stay-connected",
+        "title": "Stay Connected",
+        "description": "Keep your friendships warm and active.",
+        "defaultFrequency": "Monthly",
+        "tasks": [
+          {
+            "title": "Send a message",
+            "description": "Text or voice message checking in.",
+            "suggestedDay": "Friday",
+            "estimatedMins": 5
+          },
+          {
+            "title": "Plan a catch-up",
+            "description": "Suggest a coffee, walk, or call to reconnect.",
+            "suggestedDay": "Any",
+            "estimatedMins": 30
+          }
+        ]
+      },
+      {
+        "templateId": "deepen-friendship",
+        "title": "Deepen Friendship",
+        "description": "Move beyond surface-level connection.",
+        "defaultFrequency": "Monthly",
+        "tasks": [
+          {
+            "title": "Have a meaningful conversation",
+            "description": "Discuss life goals, values, or deeper topics.",
+            "suggestedDay": "Weekend",
+            "estimatedMins": 60
+          },
+          {
+            "title": "Try something new together",
+            "description": "Experience a new activity or place together.",
+            "suggestedDay": "Any",
+            "estimatedMins": 90
+          },
+          {
+            "title": "Celebrate their wins",
+            "description": "Acknowledge and celebrate their achievements.",
+            "suggestedDay": "Any",
+            "estimatedMins": 15
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "relationshipType": "Colleague",
+    "templates": [
+      {
+        "templateId": "build-work-trust",
+        "title": "Build Work Trust",
+        "description": "Develop a stronger professional relationship.",
+        "defaultFrequency": "Weekly",
+        "tasks": [
+          {
+            "title": "Coffee chat",
+            "description": "Schedule an informal conversation outside of meetings.",
+            "suggestedDay": "Wednesday",
+            "estimatedMins": 20
+          },
+          {
+            "title": "Offer assistance",
+            "description": "Ask if there's anything you can help with on their projects.",
+            "suggestedDay": "Tuesday",
+            "estimatedMins": 10
+          },
+          {
+            "title": "Share a resource",
+            "description": "Send an article, tool, or tip relevant to their work.",
+            "suggestedDay": "Thursday",
+            "estimatedMins": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "relationshipType": "Mentor",
+    "templates": [
+      {
+        "templateId": "mentorship-growth",
+        "title": "Nurture Mentorship",
+        "description": "Maintain and grow your mentorship relationship.",
+        "defaultFrequency": "Monthly",
+        "tasks": [
+          {
+            "title": "Prepare discussion topics",
+            "description": "List questions or topics for your next meeting.",
+            "suggestedDay": "Week Before Meeting",
+            "estimatedMins": 15
+          },
+          {
+            "title": "Share your progress",
+            "description": "Update on how you've implemented previous advice.",
+            "suggestedDay": "Any",
+            "estimatedMins": 20
+          },
+          {
+            "title": "Express gratitude",
+            "description": "Send a thank you note for specific guidance received.",
+            "suggestedDay": "Friday",
+            "estimatedMins": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "relationshipType": "Other",
+    "templates": [
+      {
+        "templateId": "maintain-connection",
+        "title": "Maintain Connection",
+        "description": "Keep the relationship active with regular contact.",
+        "defaultFrequency": "Monthly",
+        "tasks": [
+          {
+            "title": "Check in",
+            "description": "Send a message to see how they're doing.",
+            "suggestedDay": "Any",
+            "estimatedMins": 5
+          },
+          {
+            "title": "Schedule time together",
+            "description": "Plan a meeting or activity based on shared interests.",
+            "suggestedDay": "Weekend",
+            "estimatedMins": 15
+          }
+        ]
+      }
+    ]
+  }
+]

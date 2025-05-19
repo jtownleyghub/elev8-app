@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useGoals } from "@/contexts/goal-context"
 import { ContactCard } from "@/components/relationships/contact-card"
 import { ContactForm } from "@/components/relationships/contact-form"
@@ -12,6 +12,12 @@ export default function ContactsPage() {
   const { contacts, addContact, updateContact, deleteContact, generateTasksFromTemplates } = useGoals()
   const [showAddContact, setShowAddContact] = useState(false)
   const [editingContact, setEditingContact] = useState<Contact | null>(null)
+  const [localContacts, setLocalContacts] = useState<Contact[]>([])
+
+  // Update local contacts whenever the contacts state changes
+  useEffect(() => {
+    setLocalContacts(contacts)
+  }, [contacts])
 
   const handleEditContact = (contact: Contact) => {
     setEditingContact(contact)
@@ -82,8 +88,8 @@ export default function ContactsPage() {
       )}
 
       <div className="space-y-4">
-        {contacts.length > 0 ? (
-          contacts.map((contact) => (
+        {localContacts.length > 0 ? (
+          localContacts.map((contact) => (
             <ContactCard key={contact.id} contact={contact} onEdit={handleEditContact} onDelete={handleDeleteContact} />
           ))
         ) : (

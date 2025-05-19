@@ -10,6 +10,8 @@ import {
   HelpCircle,
   LogOut,
   Users,
+  FileText,
+  BookTemplate,
 } from "lucide-react"
 
 interface SidebarNavProps {
@@ -23,6 +25,8 @@ export function SidebarNav({ currentPath }: SidebarNavProps) {
     { href: "/tasks", label: "Tasks", icon: CheckSquare },
     { href: "/life-areas", label: "Life Areas", icon: PieChart },
     { href: "/life-areas/relationships/contacts", label: "Contacts", icon: Users },
+    { href: "/templates", label: "Templates", icon: FileText },
+    { href: "/templates/browse", label: "Goal Library", icon: BookTemplate },
     { href: "/calendar", label: "Calendar", icon: Calendar },
     { href: "/analytics", label: "Analytics", icon: BarChart2 },
   ]

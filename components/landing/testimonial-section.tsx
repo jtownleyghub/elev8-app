@@ -7,7 +7,7 @@ export function TestimonialSection() {
       role: "Marketing Director",
       image: "/professional-woman-headshot.png",
       content:
-        "Elev8 has completely changed how I approach my personal and professional goals. I'm more organized and focused than ever before.",
+        "Elev8 helped me balance my demanding career with my dream of writing a novel. I'm now halfway through my manuscript while still excelling at work!",
       stars: 5,
     },
     {
@@ -15,7 +15,7 @@ export function TestimonialSection() {
       role: "Software Engineer",
       image: "/professional-man-headshot.png",
       content:
-        "I've tried many productivity apps, but Elev8 is the first one that actually helped me build lasting habits and achieve my goals.",
+        "I always wanted to travel to Japan but never found the time. Elev8 helped me plan and save for my dream trip while managing my daily responsibilities.",
       stars: 5,
     },
     {
@@ -23,7 +23,7 @@ export function TestimonialSection() {
       role: "Health Coach",
       image: "/diverse-professional-woman-headshots.png",
       content:
-        "The life areas feature has been a game-changer for me. I now have a much better balance between work, health, and relationships.",
+        "Thanks to Elev8, I finally ran my first marathon! The app helped me balance my training schedule with client work and family time.",
       stars: 5,
     },
   ]
@@ -33,11 +33,11 @@ export function TestimonialSection() {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-indigo-900/60 text-indigo-300 text-sm font-medium mb-4">
-            Testimonials
+            Dream Achievers
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">What our users are saying</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Real people. Real dreams achieved.</h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Join thousands of people who have transformed their lives with Elev8.
+            Join thousands who have turned their aspirations into reality while mastering their daily lives.
           </p>
         </div>
 
